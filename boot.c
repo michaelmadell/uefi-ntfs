@@ -33,8 +33,8 @@ STATIC CONST struct {
 } Arch[] = {
 	{ L"x64", L"64-bit x86", L"an x64" },
 	{ L"ia32", L"32-bit x86", L"an x86" },
-	{ L"arm", L"32-bit ARM", L"an ARM" },
 	{ L"aa64", L"64-bit ARM", L"an ARM64" },
+	{ L"arm", L"32-bit ARM", L"an ARM" },
 	{ L"risvc64", L"64-bit RISC-V", L"a RiscV64" },
 	{ L"loongarch64", L"64-bit LoongArch", L"a Loong64" },
 };
