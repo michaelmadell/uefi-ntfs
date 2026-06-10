@@ -503,10 +503,12 @@ EFI_STATUS EFIAPI efi_main(EFI_HANDLE BaseImageHandle, EFI_SYSTEM_TABLE *SystemT
 				PrintWarning(L"Found incompatible %s UEFI bootloader instead", Arch[Index].EfiSuffix);
 				PrintError(L"You are trying to boot %s image on %s UEFI platform!", Arch[Index].Description, Arch[ArchIndex].Description);
 				PrintError(L"Please download %s compatible image and recreate the media", Arch[ArchIndex].Description);
+				Root->Close(Root);
 				goto out;
 			}
 		}
 	}
+	Root->Close(Root);
 	if (EFI_ERROR(Status)) {
 		PrintErrorStatus(L"  Could not locate '%s'", &LoaderPath[1]);
 		goto out;
